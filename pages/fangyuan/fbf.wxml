@@ -1,0 +1,123 @@
+<!--pages/fangyuan/fangyuan.wxml-->
+<view>
+
+<form bindsubmit="formSubmit" >
+
+
+
+  <view class="imgs" >
+    <van-uploader file-list="{{ fileList }}"  multiple 
+     bind:after-read="afterRead"  max-count="6" />
+  </view>
+
+
+
+  <text class="base">——基本信息——</text>
+  <view class="border"></view>
+
+  <view class="info">
+
+
+    <van-cell-group>
+      <van-field label="小区名称" required placeholder="请输入小区名" name="title"  />
+    </van-cell-group>
+
+    <van-cell-group>
+
+<view class="section">
+
+  <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+    <view class="picker">
+
+         <van-field value="{{multiArray[0][multiIndex[0]]}}-{{multiArray[1][multiIndex[1]]}}-{{multiArray[2][multiIndex[2]]}}" required label="户型" readonly  placeholder="请输入户型" name='house' />
+
+    </view>
+  </picker>
+</view>
+
+    </van-cell-group>
+
+
+
+
+    <text class="base">——租赁信息——</text>
+
+
+
+    <van-cell-group>
+
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{objectArray}}"   range-key="title" data-id="{{objectArray[index].id}}">
+    <view class="picker">
+  
+        <van-field value="{{objectArray[index].title}}" readonly  label="租赁方式" placeholder="请选择租赁方式" required />
+
+<input hidden="1" name="cate_id" value="{{cate_id}}"/>
+
+      
+    </view>
+  </picker>
+
+      <van-field value=""  label="面积" placeholder="请输入面积" required name='size' />
+
+      <van-field value=""  label="租金" placeholder="请输入租金" required name='rent' />
+
+    </van-cell-group>
+
+
+    <text class="base">——房源详情——</text>
+
+<van-cell-group>
+  <van-field
+    fixed
+    type="textarea"
+    maxlength	="600"
+    placeholder="请描述相关情况"
+    autosize
+    show-word-limit
+    name='contact'
+  />
+</van-cell-group>
+    
+    <text class="base">——联系人——</text>
+
+   <van-cell-group>
+  <van-field
+    required
+    clearable
+    label="姓名"
+    icon="question-o"
+    placeholder="请输入姓名"
+      name='name'
+      value=''
+  />
+
+  <van-field
+    label="电话"
+    placeholder="请输入电话"
+    required
+  name='phone'
+  />
+</van-cell-group>
+    
+  </view>
+
+
+ 
+
+ 
+
+   <view class="btn-area">
+        <button style="margin: 30rpx 20rpx" type="primary" formType="submit">确认发布</button>
+      
+<!-- 使用组件 重置不了bug -->
+        <!-- <button formType="reset">Reset</button> -->
+      </view>
+
+<!-- <van-button icon="https://img.yzcdn.cn/vant/logo.png" type="info" formType="reset">
+ 重置
+</van-button>
+
+<van-button icon="star-o" type="primary" formType="submit" >确认发布</van-button> -->
+
+ </form>
+</view>

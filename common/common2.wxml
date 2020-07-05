@@ -1,0 +1,17 @@
+<template name="common" data="recommendList">
+
+  <scroll-view class="page-body" scroll-y="true">
+ 
+      <van-card  wx:for="{{recommendList}}"   price="{{item.rent}}元/月" 
+       bindtap="goDate"  data-id="{{item.id}}"
+       desc="{{item.cate_title}}  {{item.house}}   {{item.size}}m²" title="{{item.title}}" thumb="{{item.litpic.litpic}}"   centered lazy-load	   >
+       
+        <!-- <view slot="footer">
+                <van-button size="mini">按钮</van-button>
+              </view> -->
+        <!-- <view slot="price-top">  <text> 什么东西</text>  </view> -->
+      </van-card>
+  </scroll-view>
+
+
+</template>

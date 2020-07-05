@@ -1,0 +1,69 @@
+/* pages/fangyuan/fangyuan.wxss */
+
+
+.big{
+  background: #ccc;
+  background-image: url('https://tse3-mm.cn.bing.net/th/id/OIP.Sc1qu6nfdKGqtwo0iTd8wAHaE7?w=294&h=195&c=7&o=5&pid=1.7');
+ /*flex布局 */
+  display:flex;    
+  /* 水平轴线居中 */
+  justify-content: center;  
+  /* 垂直居中 */
+  align-items:center;   
+  margin-top: 20rpx;
+  margin-bottom: 30rpx;
+  height: 385rpx;
+
+}
+
+.img{
+  width: 140rpx;
+  height: 140rpx;
+  padding: 40rpx;
+  background: #fff;
+  border: 5rpx solid #fff;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+
+
+
+.base{
+ display: flex;
+  flex-direction: column;
+  background: #eee;
+padding: 16rpx 0rpx;
+}
+text{
+  text-align: center;
+
+}
+
+.info{
+   display: flex;
+  flex-direction: column;
+}
+
+.border{
+    display: flex;
+    padding: 20rpx 40rpx;
+    border-bottom: 2rpx solid #eee;
+}
+
+
+.section{
+  margin-top: 20rpx;
+  
+}
+
+
+.search_text{
+   color: #999;
+    text-align: center;
+    padding:20rpx 40rpx;
+}
+.rent_title{
+     color: #999;
+    text-align: center;
+}

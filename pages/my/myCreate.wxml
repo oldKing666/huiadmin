@@ -1,0 +1,51 @@
+<!--pages/my/myCreate.wxml-->
+<!-- 调用模板1 -->
+<!-- <import src="../../common/common.wxml" /> -->
+
+
+
+
+<!-- 调用模板2 -->
+    <scroll-view scroll-y="{{true}}" class="sview" scroll-with-animation="{{ true }}"  >
+
+      <view class="recommend"  wx:for="{{recommendList}}" >
+
+    <navigator class="recommend-list"  open-type="navigate" url="/pages/data/data?id={{item.id }}">
+      <view>
+        <image src="{{item.litpic.litpic?item.litpic.litpic:'../../images/none.jpg'}}" > </image>
+      </view>
+      <view class="recommend-list-item">
+        <view class="recommend-list-item-title">{{item.title}}</view>
+        <view class="recommend-list-item-spec">
+          {{item.cate_title}} {{item.house}}|  {{item.size}}m² 
+        </view>
+        <!-- <view class="recommend-list-item-tag">
+         {{item.cate_title}}
+        </view> -->
+        <view class="recommend-list-item-price">
+          <text>¥{{item.rent }}</text>
+          元/月
+        </view>
+        
+      </view>
+    </navigator>
+
+    <view class="delbox">
+      <view class="view"> <image src="../../images/view.png"></image> {{item.view}}人浏览</view>
+
+      <view class="update" bindtap="update" data-id="{{item.id}}" > 刷新
+      </view>
+
+
+      <view class="del" bindtap="del" data-id="{{item.id}}" > 删除
+      <image src="../../images/del.png"></image>
+      </view>
+    </view>
+
+   </view>
+
+
+
+  <!-- <template is="common" data="{{recommendList}}" /> -->
+
+ </scroll-view>

@@ -1,0 +1,13 @@
+/* pages/login/login.wxss */
+
+.imgs{
+   display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+button{
+ margin-bottom: 20px;
+ 
+}

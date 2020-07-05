@@ -1,0 +1,15 @@
+<!--pages/search/search.wxml-->
+
+
+<view class="section"> 
+  <input class="search_text" placeholder="输入小区名字" focus type="text" bindinput="bindKeyInput"  value="{{keyword}}"/> 
+</view> 
+
+
+
+<view wx:for="{{sugData}}" wx:key="uid">
+<text class="search_text" bindtap="getketword" data-name="{{item.name}}"> {{item.name}}</text>
+<van-divider />
+</view>
+
+

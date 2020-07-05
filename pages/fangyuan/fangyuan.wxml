@@ -1,0 +1,173 @@
+<!--pages/fangyuan/fangyuan.wxml-->
+<view>
+
+<form bindsubmit="formSubmit" >
+<van-notice-bar
+  mode="closeable"
+  scrollable="false"
+  color=""
+  text="最多上传6张图片;上传后,点击图片删除"
+/>
+
+<!-- 上传图片 -->
+<view class="big" >
+<image class="img" bindtap="upimg"  src="../../images/upload.png"> </image>
+</view>
+
+<view class="uploads">
+
+<!-- 原生 -->
+<!-- <block wx:for="{{fileList}}">
+<view class="imgs">
+<image src="{{item}}"></image>
+</view>
+</block> -->
+
+<van-grid column-num="3" border="false" clickable >
+  <van-grid-item use-slot wx:for="{{fileList}}" bind:click="deleteImg" data-index='{{index}}'   >
+    <image  
+      style="width: 100%; height: 90px;"
+      src="{{item}}"
+    />
+  </van-grid-item>
+</van-grid>
+  
+
+</view>
+
+
+
+
+  <text class="base">——基本信息——</text>
+
+
+  <view class="info">
+
+<text class="section">小区名称</text>
+
+    <!-- <van-cell-group>
+      <van-field label="小区名称" required placeholder="请输入小区名" name="rent_title"  bindinput="bindKeyInput" value="{{keyword}}" />
+    </van-cell-group> -->
+
+<view class="section"> 
+  <input class="rent_title" placeholder="输入小区名字" name="rent_title"  focus type="text" bindinput="bindKeyInput" value="{{keyword}}"/> 
+</view> 
+
+<view wx:for="{{sugData}}" wx:key="uid">
+<text class="search_text" bindtap="getketword" data-name="{{item.name}}" data-location="{{item.location}}"> {{item.name}}</text>
+<van-divider />
+</view>
+
+
+<!-- 隐藏经纬度表单 -->
+<input hidden="1" name="lat" value="{{lat}}"/>
+<input hidden="1" name="lng" value="{{lng}}"/>
+<view class="border"></view>
+
+
+
+ <van-cell-group>
+<view class="section">
+
+  <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+    <view class="picker">
+
+         <van-field value="{{multiArray[0][multiIndex[0]]}}-{{multiArray[1][multiIndex[1]]}}-{{multiArray[2][multiIndex[2]]}}" required label="户型" size="large" readonly  placeholder="请输入户型" name='house' />
+
+    </view>
+  </picker>
+</view>
+
+
+  <van-cell-group>
+      <van-field label="楼层" required size="large"  type='number' placeholder="请输入楼层数 (层)" name="floor"  />
+    </van-cell-group>
+
+
+
+    </van-cell-group>
+
+
+
+
+    <text class="base">——租赁信息——</text>
+
+
+
+    <van-cell-group>
+
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{objectArray}}"   range-key="title" data-id="{{objectArray[index].id}}">
+    <view class="picker">
+  
+        <van-field value="{{objectArray[index].title}}" size="large" readonly  label="租赁方式" placeholder="请选择租赁方式" required />
+
+<input hidden="1" name="cate_id" value="{{cate_id}}"/>
+
+      
+    </view>
+  </picker>
+
+      <van-field value=""  type='number'  label="面积" size="large" placeholder="请输入面积 (m²)" required name='size' />
+
+      <van-field value=""  type='number'  label="租金" size="large" placeholder="请输入租金 (元/月)" required name='rent' />
+
+    </van-cell-group>
+
+
+    <text class="base">——房源详情——</text>
+
+<van-cell-group>
+
+      <van-field label="房源标题" size="large" required placeholder="请输入房源标题" name="title"  />
+
+
+  <van-field
+    type="textarea"
+    maxlength	="600"
+    placeholder="请描述相关情况"
+    autosize="{ maxHeight: 400, minHeight: 100 }"
+    size="large"
+    show-word-limit
+    name='content'
+  />
+</van-cell-group>
+    
+    <text class="base">——联系人——</text>
+
+   <van-cell-group>
+  <van-field
+    required
+    clearable
+    label="姓名"
+   size="large"
+    placeholder="请输入姓名"
+      name='name'
+      value=''
+  />
+
+  <van-field
+    label="电话"
+    placeholder="请输入电话"
+    size="large"
+    required
+    type='number'
+    icon="question-o"
+  name='contact'
+  />
+</van-cell-group>
+    
+  </view>
+
+
+ 
+
+ 
+
+   <view class="btn-area">
+        <button style="margin: 30rpx 20rpx" type="primary" formType="submit">确认发布</button>
+<!-- 使用组件 重置不了bug -->
+        <!-- <button formType="reset">Reset</button> -->
+      </view>
+
+ </form>
+</view>

@@ -1,0 +1,44 @@
+/**index.wxss**/
+
+.search{
+
+  margin-bottom: 10rpx; 
+}
+
+
+.swiper{
+  height: 400rpx;
+  width: 100%;
+}
+
+.banner-item{
+  height: 100%;
+  width: 100%;
+}
+
+.item-image{
+  width: 100%;
+    height: 100%;
+}
+
+
+
+.text1{
+  font-weight: bolder;
+}
+.text2{
+ font-size: 0.7rem;
+ vertical-align: middle;
+ float: right;
+  margin-right: 1rem
+}
+
+.title{
+  margin-top: 30rpx;
+  margin-bottom: 30rpx; 
+  margin-left: 1rem
+}
+.sview{
+
+  height: 1000rpx;
+}

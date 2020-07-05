@@ -1,0 +1,141 @@
+<!--pages/data/data.wxml-->
+<view class="container" >
+
+   <swiper indicator-dots="true" autoplay="true" class="swiper">
+        <block wx:for="{{data.litpic}}">
+            <swiper-item class="banner-item" bindtap="onProductsItemTap" data-id="{{item.id}}">
+              <image class="item-image" src="{{item.litpic}}" mode="aspectFill" />
+            </swiper-item>
+        </block>
+    </swiper>
+
+<view class="title">
+{{data.title}}
+
+<view class="view">
+ <image src="../../images/view.png"></image>  {{data.view}}
+</view>
+
+ 
+ </view>
+
+
+
+
+<view class="main">
+
+<view class="main1">
+<view class="maintit">租金</view>
+<view class="maininfo">{{data.rent}}元/月</view>
+</view>
+
+<view class="main1">
+<view class="maintit">户型</view>
+<view class="maininfo">{{data.house}}</view>
+</view>
+
+<view class="main1">
+<view class="maintit">面积</view>
+<view class="maininfo">{{data.size}}m²</view>
+</view>
+
+</view>
+
+<view class="background"></view>
+
+
+<van-row custom-class='custom'>
+  <van-col offset='1' span="11" custom-class='wssw'><text class="style">类型 </text> {{data.cate_title}}</van-col>
+
+    <van-col offset='1' span="11" custom-class='wssw'><text class="style">楼层 </text> {{data.floor}}</van-col>
+</van-row>
+
+<!-- 
+<van-row custom-class='custom'>
+  <van-col offset='1' span="11" custom-class='wssw'><text class="style">方式 </text> 整租?</van-col>
+
+    <van-col offset='1' span="11" custom-class='wssw'><text class="style">楼层 </text> ?7</van-col>
+</van-row> -->
+
+<van-divider />
+
+<view ><text class="style toleft">发布时间</text>{{data.create_time}}</view>
+<!-- 线-->
+<van-divider />
+
+<view ><text class="style toleft">所属小区</text>{{data.rent_title}}</view>
+
+<van-divider />
+
+<!-- <view class="background"></view> -->
+
+
+
+<view class='bg-white marginTop10 vertical'>
+  <text class='pay-hint-tille'>房源描述</text>
+  <text class="pay-hint-content {{ellipsis?'ellipsis':'unellipsis'}}" >
+  {{data.content}}
+  </text>
+  <view class='bg-white-ellipsis' bindtap='ellipsis'>
+    <image class='img-ellipsis' src="{{ellipsis?'../../images/down.png':'../../images/up.png'}}"></image>
+  </view>
+</view>
+
+
+<view class="background"></view>
+
+
+<view>
+<van-row custom-class='custom'>
+  <van-col offset='1' span="20" custom-class='wssw'>我要举报 <text class="style">房源无效、虚假信息 </text>
+  </van-col>
+  <van-col span="3" custom-class='wssw'  bindtap="goTip" data-id="{{data.id}}" > 举报</van-col>
+</van-row>
+</view>
+
+
+
+<view class="background"></view>
+
+
+<view>小区地址</view>
+
+<!-- 地图 map组件longitude/latitude  初始化地图所在的一个大概一个显示的区域，一般和标识点一样的，这样就可以达到地图显示时就会有标识点 -->
+<view class="map-box">
+  <map id="map" longitude="{{data.lng }}" latitude="{{data.lat}}" markers="{{markers }}" />
+</view>
+
+
+<!-- <van-goods-action>
+  <van-goods-action-icon   icon="{{isShow?'like':'like-o'}}" text="收藏" bind:click="like" />
+  <van-goods-action-button  color="#7232dd"  type="warning" text="  {{data.name}}" disabled />
+  <van-goods-action-button
+    text="电话咨询"
+    type="warning"
+    bindtap="callPhone"
+    data-phone="{{data.contact}}"
+  />
+</van-goods-action> -->
+
+
+<!-- 底部功能菜单 -->
+<view class="footer-menu">
+  <view bind:tap="like"> {{isShow?'已收藏':'加入收藏'}}</view>
+
+  <view>
+    分享好友
+    <!-- 按钮开放能力实现 -->
+    <button open-type="share">分享好友</button>
+  </view>
+
+  <view>
+  {{data.name}}
+    <!-- 触发客服聊天 -->
+    <!-- <button open-type="contact">在线咨询</button> -->
+  </view>
+
+  <view data-phone="{{ data.contact}}" bind:tap="callPhone">电话咨询</view>
+
+</view>
+
+</view>

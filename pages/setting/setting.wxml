@@ -1,0 +1,11 @@
+<!--pages/setting/setting.wxml-->
+<!--pages/setting/setting.wxml-->
+<!-- 系统设置页  -->
+<view>
+
+<button open-type="openSetting" bindopensetting   bindopensetting type="primary" >去设置页开启</button>
+
+</view>
+
+
+

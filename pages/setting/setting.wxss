@@ -1,0 +1,11 @@
+/* pages/setting/setting.wxss */
+view{
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  height: 1000rpx;
+}
+
+button{
+  width: 90%;
+}

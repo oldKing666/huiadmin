@@ -1,0 +1,12 @@
+<!--pages/my/myFa.wxml-->
+<import src="../../common/common.wxml" />
+
+  <!-- <text> 暂无数据！</text> -->
+
+  <text hidden="{{hidden}}" >暂无数据</text>
+
+
+    <scroll-view scroll-y="{{true}}" class="sview" bindscrolltolower="getMore" scroll-with-animation="{{ true }}" scroll-top="{{ topNum }}" >
+<!-- 调用模板2 -->
+  <template is="common" data="{{recommendList}}" />
+ </scroll-view>

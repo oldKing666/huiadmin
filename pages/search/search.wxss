@@ -1,0 +1,7 @@
+/* pages/search/search.wxss */
+
+.search_text{
+   color: #999;
+    text-align: center;
+    padding:20rpx 40rpx;
+}

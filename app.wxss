@@ -1,0 +1,61 @@
+/**app.wxss**/
+/* @import '/common/common.wxss'; */
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+} 
+
+
+/* 设置一个固定高度 */
+.sview{
+  height: 1400rpx;
+}
+
+/* 推荐房源 */
+.recommend {
+  margin-top: 3px;
+  background: #fff;
+  color: #474747;
+}
+
+.recommend-list {
+  border-top: 1px solid #cccccc;
+  display: flex;
+  padding: 20rpx;
+}
+
+.recommend-list image {
+  width: 250rpx;
+  height: 180rpx;
+}
+
+.recommend-list-item {
+  margin-left: 25rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.recommend-list-item-spec {
+  color: #ccc;
+  font-size: 14px;
+}
+.recommend-list-item-tag text{
+  margin: 6rpx;
+}
+.recommend-list-item-price {
+  color: red;
+}
+.recommend-list-item-price text{
+  font-weight: bold;
+}
+
+
+
+
+
+
+

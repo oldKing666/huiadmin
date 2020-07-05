@@ -1,0 +1,22 @@
+<!--pages/list/list.wxml-->
+
+<import src="../../common/common.wxml" />
+
+<van-dropdown-menu  >
+  <van-dropdown-item title="排序" value="{{ value1 }}" options="{{ option1 }}" bind:change="changeOrder"/>
+  <van-dropdown-item title="租金" value="{{ value2.rent}}" options="{{ option2 }}"  bind:change="changeRent"/>
+  <van-dropdown-item title="户型" value="{{ value3 }}" options="{{ option3 }}" bind:change="changeHouse" />
+</van-dropdown-menu>
+<!-- 线-->
+<!-- <van-divider /> -->
+
+<scroll-view scroll-y="{{true}}" class="sview" bindscrolltolower="getMore" scroll-with-animation="{{ true }}" scroll-top="{{ topNum }}" >
+
+<template is="common" data="{{recommendList}}" />
+
+</scroll-view>
+
+
+
+
+

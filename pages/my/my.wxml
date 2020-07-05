@@ -1,0 +1,145 @@
+
+<scroll-view>
+  <view>
+
+        <view class="header">
+          <view class="bg">
+            <view class="box">
+
+
+<block wx:if="{{is_show}}">
+         <view class="box-hd"  >
+                <view class="avator">
+                  <!-- 直接展示微信开放的数据 -->
+                  <open-data type="userAvatarUrl"></open-data>
+                </view>
+                <open-data type="userNickName" class="userNickName"></open-data>
+     
+              </view>
+
+
+</block>
+
+<block wx:else> 
+
+<view class="box-hd"  bindtap="login">
+                <view class="avator">
+                  <!-- 直接展示微信开放的数据 -->
+                  <!-- <open-data " type="userAvatarUrl"></open-data> -->
+                   <image src="../../images/user/person.jpeg"></image>
+                </view>
+                <!-- <open-data wx:if="{{is_show !== ''}}" type="userNickName" class="userNickName"></open-data> -->
+               <text class="userNickName"> 登录/注册 </text>
+              </view>
+
+
+
+
+</block>
+
+
+
+
+              <view class="box-bd">
+    
+                <!-- <view class="item">
+                  <view class="icon">
+
+                    <image src="../../images/user/message.png"></image>
+                  </view>
+                  <view class="text">我的通知</view>
+                </view>
+
+
+
+                <view class="item">
+                  <view class="icon">
+
+                    <image src="../../images/user/service.png"></image>
+                  </view>
+                  <view class="text">我的客服</view>
+                </view> -->
+
+
+              </view>
+            </view>
+          </view>
+        </view>
+
+
+
+
+
+      <view class="list-content">
+
+      <navigator url="myFavorite">
+
+        <view class="list" bindtap="favorite">
+          <view class="li noborder">
+            <view class="icon">
+
+              <image src="../../images/user/favorite.png"></image>
+
+            </view>
+            <view class="text">我的收藏</view>
+
+            <image class="to" src="../../images/user/to.png"></image>
+          </view>
+        </view>
+</navigator>
+
+
+<navigator url="myCreate">
+      <view class="list">
+          <view class="li ">
+            <view class="icon">
+              <image src="../../images/user/opinion.png"></image>
+            </view>
+            <view class="text">我的发布</view>
+            <image class="to" src="../../images/user/to.png"></image>
+          </view>
+      </view>
+</navigator>
+
+<navigator url="/pages/setting/about">
+        <view class="list">
+
+          <view class="li ">
+            <view class="icon">
+
+              <image src="../../images/user/about.png"></image>
+            </view>
+            <view class="text">关于我们</view>
+            <image class="to" src="../../images/user/to.png"></image>
+          </view>
+
+           </view>
+
+</navigator>
+
+
+  <navigator url="/pages/setting/setting">
+        <view class="list" >
+          <view class="li noborder">
+            <view class="icon">
+              <image src="../../images/user/set.png"></image>
+            </view>
+
+            <view class="text" setting>系统设置</view>
+
+            <image class="to" src="../../images/user/to.png"></image>
+
+          </view>
+        </view>
+</navigator>
+
+      </view>
+ 
+
+
+
+     
+   <button wx:if="{{is_show}}"  bindtap="logout" >退出登录</button>
+
+  </view>
+</scroll-view>

@@ -1,0 +1,27 @@
+<template name="common">
+  <!-- <scroll-view class="page-body" scroll-y="true"> -->
+    <!-- <scroll-view scroll-y="{{true}}" class="sview" bindscrolltolower="getMore" scroll-with-animation="{{ true }}" scroll-top="{{ topNum }}" > -->
+    
+  <view class="recommend"  wx:for="{{recommendList}}" >
+    <navigator class="recommend-list" open-type="navigate" url="/pages/data/data?id={{item.id }}">
+      <view>
+        <image src="{{item.litpic.litpic?item.litpic.litpic:'../../images/none.jpg'}}" > </image>
+      </view>
+      <view class="recommend-list-item">
+        <view class="recommend-list-item-title">{{item.title}}</view>
+        <view class="recommend-list-item-spec">
+          {{item.cate_title}} {{item.house}}|  {{item.size}}m² 
+        </view>
+        <!-- <view class="recommend-list-item-tag">
+         {{item.cate_title}}
+        </view> -->
+        <view class="recommend-list-item-price">
+          <text>¥{{item.rent }}</text>
+          元/月
+        </view>
+      </view>
+    </navigator>
+
+  </view>
+  <!-- </scroll-view> -->
+</template>

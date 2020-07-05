@@ -1,0 +1,54 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/fangyuan/fangyuan",
+    "pages/my/my",
+    "pages/login/login",
+    "pages/list/list",
+    "pages/data/data",
+    "pages/my/myCreate",
+    "pages/my/myFavorite",
+    "pages/search/search",
+    "pages/tip/tip",
+    "pages/setting/setting",
+    "pages/setting/about"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "武汉租房",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#ccc",
+    "list": [
+      {
+        "text": "租房",
+        "iconPath": "images/house.png",
+        "selectedIconPath": "images/house_select.png",
+        "pagePath": "pages/index/index"
+      },
+      {
+        "text": "发房源",
+        "iconPath": "images/fangyuan.png",
+        "selectedIconPath": "images/fangyuan_select.png",
+        "pagePath": "pages/fangyuan/fangyuan"
+      },
+      {
+        "text": "我的",
+        "iconPath": "images/my.png",
+        "selectedIconPath": "images/my_select.png",
+        "pagePath": "pages/my/my"
+      }
+    ]
+  },
+  "usingComponents": {
+    "van-card": "@vant/weapp/card/index",
+    "van-button": "@vant/weapp/button/index",
+    "van-grid": "@vant/weapp/grid/index",
+    "van-grid-item": "@vant/weapp/grid-item/index",
+    "van-notice-bar": "@vant/weapp/notice-bar/index",
+    "van-divider": "@vant/weapp/divider/index"
+  },
+  "sitemapLocation": "sitemap.json"
+}

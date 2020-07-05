@@ -1,0 +1,25 @@
+<template name="common" data="recommendList">
+
+  <scroll-view class="page-body" scroll-y="true">
+
+<view  wx:for="{{recommendList}}" class="van-clearfix" >
+<view class="imgbox">
+<image class="img" src="{{item.litpic.litpic}}" > </image> 
+</view>
+
+<view class="text">
+  <view class="texttitle">
+  {{item.name}}|{{item.rent}}
+  </view>
+<view class="textinfo">
+  <span>1室2厅</span> <span class="price">2000元</span>
+</view>
+
+</view>
+</view>
+
+
+
+  </scroll-view>
+
+</template>

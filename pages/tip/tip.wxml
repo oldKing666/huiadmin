@@ -1,0 +1,42 @@
+<!--pages/tip/tip.wxml-->
+<view>
+ <form catchsubmit="formSubmit" catchreset="formReset">
+
+  <van-field
+    label="联系方式"
+    placeholder="请输入联系方式"
+    size="large"
+    required
+    type='number'
+    name='contact'
+  />
+
+
+<input hidden="1" name="rent_id" value="{{rent_id}}"/>
+
+
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{liyouArray}}">
+    <view class="picker">
+  
+        <van-field  name="reason" value="{{liyou}}" size="large" readonly  label="举报理由" placeholder="请选择举报理由" required />
+    </view>
+  </picker>
+
+
+ <van-field
+    type="textarea"
+    maxlength	="100"
+    placeholder="补充更多信息以便判断"
+    autosize="{ maxHeight: 500, minHeight: 100 }"
+    size="large"
+    show-word-limit
+    name='content'
+  />
+
+
+   <view class="btn-area">
+        <button style="margin: 30rpx 20rpx" type="primary" formType="submit">提交</button>
+      </view>
+</form>
+
+</view>

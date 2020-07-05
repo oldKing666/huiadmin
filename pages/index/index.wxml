@@ -1,0 +1,55 @@
+<!--index.wxml-->
+<!-- 调用模板1 -->
+<import src="../../common/common.wxml" />
+
+
+<view class="container">
+
+  <view class="search">
+    <van-search name="keywords" shape="round" placeholder="请输入小区名字" disabled  bindtap="search" />
+  </view>
+
+
+  <view>
+    <van-grid column-num="4" >
+      <van-grid-item icon="{{item.logo}}"  wx:for="{{catrgory}}" text="{{item.title}}"  link-type="navigateTo"
+    url="/pages/list/list?cate_id={{item.id}}"   />
+  
+    </van-grid>
+  </view>
+
+
+  
+<view class="msg">
+
+   <swiper indicator-dots="true" autoplay="true" class="swiper">
+        <block wx:for="{{bannerArr}}">
+            <swiper-item class="banner-item" bindtap="onProductsItemTap" data-id="{{item.id}}">
+                <image class="item-image" src="{{item.litpic}}" mode="aspectFill" />
+            </swiper-item>
+        </block>
+    </swiper>
+
+
+  <van-notice-bar
+  text="免责声明：平台发布的所有房源信息均为用户上传发布（免费），平台只负责发布，展示，与平台无关，平台不负任何责任！"
+/>
+</view>
+
+
+<view class="title">
+<text class="text1">为你推荐</text>
+
+  <navigator url="../list/list" class="text2">
+<text >查看全部></text>
+ </navigator> 
+</view>
+
+
+  <scroll-view scroll-y="{{true}}" class="sview" bindscrolltolower="getMore" scroll-with-animation="{{ true }}">
+<!-- 调用模板2 -->
+  <template is="common" data="{{recommendList}}" />
+
+  </scroll-view>
+
+</view>
